@@ -1,5 +1,8 @@
-﻿using CatalogService.DataAccess.Dbo;
+﻿using AutoMapper;
+using CatalogService.DataAccess.Dbo;
 using CatalogService.DataAccess.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,26 +10,12 @@ using System.Threading.Tasks;
 
 namespace CatalogService.DataAccess.Repositories
 {
-    public class CatalogTypesRepository : ICatalogTypesRepository
+    public class CatalogTypesRepository : Repository<Models.CatalogTypes, CatalogTypes>, ICatalogTypesRepository
     {
-        public Task<bool> Delete(int idEntity)
+        public CatalogTypesRepository(Models.catalogContext context, ILogger<CatalogTypesRepository> logger, IMapper mapper) : base(context.CatalogTypes, context, logger, mapper)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<CatalogTypes>> Get(int? id)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<CatalogTypes> Insert(CatalogTypes entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CatalogTypes> Update(CatalogTypes entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

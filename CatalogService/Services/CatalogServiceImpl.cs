@@ -16,22 +16,22 @@ namespace CatalogService
             _logger = logger;
         }
 
-        public override Task<CatalogItems> CreateCatalogItem(CatalogItems request, ServerCallContext context)
+        public override Task<CatalogItem> CreateCatalogItem(CatalogItem request, ServerCallContext context)
         {
             return base.CreateCatalogItem(request, context);
         }
 
-        public override Task<CatalogItems> GetItemById(Id request, ServerCallContext context)
+        public override Task<CatalogItem> GetItemById(Id request, ServerCallContext context)
         {
             return base.GetItemById(request, context);
         }
 
-        public override Task<Ok> RemoveCatalogItem(CatalogItems request, ServerCallContext context)
+        public override Task<Ok> RemoveCatalogItem(CatalogItem request, ServerCallContext context)
         {
             return base.RemoveCatalogItem(request, context);
         }
 
-        public override Task<Ok> UpdateCatalogItem(CatalogItems request, ServerCallContext context)
+        public override Task<Ok> UpdateCatalogItem(CatalogItem request, ServerCallContext context)
         {
             return base.UpdateCatalogItem(request, context);
         }

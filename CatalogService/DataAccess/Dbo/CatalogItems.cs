@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CatalogService.DataAccess.Dbo
 {
-    public class CatalogItems
+    public class CatalogItems : IObjectWithId
     {
         public int Id { get; set; }
         public string Description { get; set; }

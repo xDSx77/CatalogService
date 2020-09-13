@@ -29,9 +29,7 @@ namespace CatalogService.Models
             {
                 entity.ToTable("catalog_brands");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Brand)
                     .IsRequired()
@@ -44,9 +42,7 @@ namespace CatalogService.Models
             {
                 entity.ToTable("catalog_items");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.BrandId).HasColumnName("brand_id");
 
@@ -87,9 +83,7 @@ namespace CatalogService.Models
             {
                 entity.ToTable("catalog_types");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Type)
                     .IsRequired()

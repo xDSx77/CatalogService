@@ -5,10 +5,10 @@ option csharp_namespace = "CatalogService";
 package Catalog;
 
 service CatalogService {
-  rpc CreateCatalogItem (CatalogItems) returns (CatalogItems);
-  rpc GetItemById (Id) returns (CatalogItems);
-  rpc RemoveCatalogItem (CatalogItems) returns (Ok);
-  rpc UpdateCatalogItem (CatalogItems) returns (Ok);
+  rpc CreateCatalogItem (CatalogItem) returns (CatalogItem);
+  rpc GetItemById (Id) returns (CatalogItem);
+  rpc RemoveCatalogItem (CatalogItem) returns (Ok);
+  rpc UpdateCatalogItem (CatalogItem) returns (Ok);
 }
 
 message Id {
@@ -19,7 +19,7 @@ message Ok {
   bool ok = 1;
 }
 
-message CatalogItems {
+message CatalogItem {
   string description = 1;
   string name = 2;
   float price = 3;
