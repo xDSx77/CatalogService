@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "CatalogService";
+
+package Catalog;
+
+service CatalogService {
+  rpc CreateCatalogItem (CatalogItems) returns (CatalogItems);
+  rpc GetItemById (Id) returns (CatalogItems);
+  rpc RemoveCatalogItem (CatalogItems) returns (Ok);
+  rpc UpdateCatalogItem (CatalogItems) returns (Ok);
+}
+
+message Id {
+  int64 id = 1;
+}
+
+message Ok {
+  bool ok = 1;
+}
+
+message CatalogItems {
+  string description = 1;
+  string name = 2;
+  float price = 3;
+  string pictureFilename = 4;
+  int64 brandId = 5;
+  int64 typeId = 6;
+}
