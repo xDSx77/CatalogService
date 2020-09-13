@@ -15,5 +15,21 @@ namespace CatalogService.DataAccess.Repositories
         public CatalogItemsRepository(Models.catalogContext context, ILogger<CatalogItemsRepository> logger, IMapper mapper) : base(context.CatalogItems, context, logger, mapper)
         {
         }
+
+        public async Task<CatalogItems> GetByName(string name)
+        {
+            try
+            {
+                var catalogItem = await (from catalogItems in _context.CatalogItems.AsNoTracking()
+                                   where catalogItems.Name == name
+                                   select catalogItems).FirstOrDefaultAsync();
+                return _mapper.Map<CatalogItems>(catalogItem);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Cannot get this entry", ex);
+                return null;
+            }
+        }
     }
 }
